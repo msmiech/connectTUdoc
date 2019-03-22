@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/doctorSearch_dest"
+            android:icon="@drawable/ic_search"
+            android:title="@string/find_doctor_label" />
+        <item
+            android:id="@+id/myDoctors_dest"
+            android:icon="@drawable/ic_doctor"
+            android:title="@string/my_doctors_label" />
+        <item
+            android:id="@+id/myAppointments_dest"
+            android:icon="@drawable/ic_date_range_grey"
+            android:title="@string/my_appointments_label" />
+        <item
+                android:id="@+id/settings_dest"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/settings" />
+    </group>
+</menu>

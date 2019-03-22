@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/doctorSearch_dest">
+
+    <fragment
+        android:id="@+id/doctorSearch_dest"
+        android:name="wse18.ase.qse03.mobile.ui.doctorSearch.DoctorSearchFragment"
+        android:label="doctor_search_fragment"
+        tools:layout="@layout/doctor_search_fragment" >
+        <action
+            android:id="@+id/action_doctorSearch_dest_to_doctorOverview"
+            app:destination="@id/doctorOverview"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/doctorOverview"
+        android:name="wse18.ase.qse03.mobile.ui.doctorSearch.DoctorOverview"
+        android:label="doctor_overview_fragment"
+        tools:layout="@layout/doctor_overview_fragment">
+        <argument android:name="name" app:argType="string"/>
+        <argument android:name="address" app:argType="string"/>
+        <argument android:name="officehours" app:argType="string"/>
+        <argument android:name="telephone" app:argType="string"/>
+        <action android:id="@+id/action_doctorOverview_to_appointmentOverviewFragment"
+                app:destination="@id/appointmentOverviewFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/myDoctors_dest"
+        android:name="wse18.ase.qse03.mobile.ui.myDoctors.MyDoctorsFragment"
+        android:label="my_doctors_fragment"
+        tools:layout="@layout/my_doctors_fragment" >
+        <action
+            android:id="@+id/action_myDoctors_dest_to_chat"
+            app:destination="@id/chat"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/chat"
+        android:name="wse18.ase.qse03.mobile.ui.myDoctors.ChatFragment"
+        android:label="chat_fragment"
+        tools:layout="@layout/chat_fragment">
+        <argument android:name="officeId" app:argType="long"/>
+    </fragment>
+
+	<fragment android:id="@+id/appointmentOverviewFragment"
+              android:name="wse18.ase.qse03.mobile.ui.appointmentOverview.AppointmentOverviewFragment"
+              android:label="appointment_overview_fragment" tools:layout="@layout/appointment_overview_fragment"/>
+    <fragment android:id="@+id/myAppointments_dest"
+              android:name="wse18.ase.qse03.mobile.ui.personalAppointmentOverview.PersonalAppointmentsFragment"
+              android:label="personal_appointments_fragment" tools:layout="@layout/personal_appointments_fragment"/>
+    <fragment android:id="@+id/videoCallFragment_dest" android:name="wse18.ase.qse03.mobile.ui.myDoctors.VideoCallFragment"
+              android:label="VideoCallFragment"/>
+    <fragment android:id="@+id/settings_dest" android:name="wse18.ase.qse03.mobile.ui.settings.SettingsFragment"
+              android:label="settings_fragment" tools:layout="@layout/settings_fragment"/>
+</navigation>

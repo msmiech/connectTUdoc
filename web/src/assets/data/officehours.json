@@ -1,0 +1,26 @@
+[
+  {
+    "id": 17,
+    "beginTime": "07:00",
+    "endTime": "12:00",
+    "daytype": "MONDAY"
+  },
+  {
+    "id": 18,
+    "beginTime": "13:00",
+    "endTime": "16:00",
+    "daytype": "MONDAY"
+  },
+  {
+    "id": 19,
+    "beginTime": "08:00",
+    "endTime": "11:00",
+    "daytype": "TUESDAY"
+  },
+  {
+    "id": 20,
+    "beginTime": "13:00",
+    "endTime": "18:00",
+    "daytype": "THURSDAY"
+  }
+]

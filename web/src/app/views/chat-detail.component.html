@@ -1,0 +1,13 @@
+<div class="chatHeader" style="background-color: #a2a2a2;">
+  <app-chat-header></app-chat-header>
+</div>
+
+<div class="mainContent">
+  <div #scroller class="feedWrapper">
+    <app-chat (updateValues)="scrollToBottom($event)"></app-chat>
+  </div>
+</div>
+
+<div class="chatFormWrapper">
+  <app-chat-input class="chatFormWrapper"></app-chat-input>
+</div>

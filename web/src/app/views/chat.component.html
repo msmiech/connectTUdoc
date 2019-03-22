@@ -1,0 +1,29 @@
+<div class="feed">
+  <div *ngFor="let message of messages" class="message">
+    <app-chat-message [chatMessage]=message></app-chat-message>
+  </div>
+</div>
+
+
+<!--
+  <mat-card >
+    <mat-card-header style="justify-content: center;align-items: center;">
+      <h1 ><mat-icon>forum</mat-icon>
+      {{ patient.firstName }} {{ patient.lastName }}</h1>
+    </mat-card-header>
+  </mat-card>
+  <mat-card *ngFor="let message of messages">
+    <mat-card-header *ngIf="message.patientMessage" style="justify-content: right;">
+      <p> {{ message.message }} </p>
+      <br/>
+      <p style="font-size: 10px">{{ message.createDateTime }}</p>
+    </mat-card-header>
+
+    <mat-card-header *ngIf="!message.patientMessage" style="justify-content: left;">
+      <p> {{ message.message }} </p>
+      <br><br>
+      <p style="font-size: 10px">{{ message.createDateTime }}</p>
+    </mat-card-header>
+  </mat-card>
+
+-->

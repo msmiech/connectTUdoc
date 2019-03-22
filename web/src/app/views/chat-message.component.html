@@ -1,0 +1,28 @@
+<div class="messageContainer"
+     [ngClass]="{'isOwnMessageContainer':chatMessage.patientMessage}">
+  <div class="messageData"
+       [ngClass]="{'isOwnMessageData':chatMessage.patientMessage}">
+        <span class="sender"
+              [ngClass]="{'isOwnSender':chatMessage.patientMessage}">
+          <p *ngIf="!chatMessage.patientMessage"> {{ chatMessage.chatThread.office.name }} </p>
+          <p
+            *ngIf="chatMessage.patientMessage"> {{ chatMessage.chatThread.patient.firstName }} {{ chatMessage.chatThread.patient.lastName }}</p>
+          <!-- #{{ chatMessage.id }} -->
+    </span>
+    <span class="timestamp"
+          [ngClass]="{'isOwnTimestamp':chatMessage.patientMessage}">
+            {{ chatMessage.createDateTime }}
+        </span>
+  </div>
+  <div class="messageContent"
+       [ngClass]="{'isOwnMessageContent':chatMessage.patientMessage}">
+
+    {{ chatMessage.message }}
+    <div *ngIf="chatMessage.chatAttachmentPresent === true" class="messageAttachment">
+      <button mat-raised-button color="accent" (click)="downloadAttachment()">
+        Download
+      </button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html { height: 100%; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  width: 100%;
+  min-height:100%;
+  background: #eee;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Open Sans", sans-serif;
+}
+
+.app-body {
+  height: 90%;
+}
+
+.main-page{
+  overflow: auto;
+}
+
+app-chat-detail{
+  height: 100%;
+}
+
+.message {
+  display: block;
+  height: auto;
+}

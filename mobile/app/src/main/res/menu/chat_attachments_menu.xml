@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/chat_attachments_menu">
+    <item android:id="@+id/take_photo"
+          android:icon="@drawable/ic_photo"
+          android:title="@string/btn_take_photo"/>
+    <item android:id="@+id/send_file"
+          android:icon="@drawable/ic_drafts"
+          android:title="@string/btn_send_file"/>
+    <item android:id="@+id/take_and_scan_photo"
+          android:icon="@drawable/common_full_open_on_phone"
+          android:title="@string/take_and_scan_photo"/>
+    <item android:id="@+id/scan_image"
+          android:icon="@drawable/common_full_open_on_phone"
+          android:title="@string/scan_image_from_gallery"/>
+    <item android:id="@+id/take_and_scan_barcode"
+          android:icon="@drawable/common_full_open_on_phone"
+          android:title="@string/take_and_scan_barcode"/>
+</menu>

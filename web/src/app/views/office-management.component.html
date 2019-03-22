@@ -1,0 +1,159 @@
+<mat-card>
+  <mat-card-title>
+    Office Management
+  </mat-card-title>
+  <mat-card-subtitle>
+    Verwalten sie ihr Daten hier
+  </mat-card-subtitle>
+
+  <!--{{officeModel | json}}-->
+  <div class="example-container">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+      <p *ngIf="false">
+        <mat-error >{{errorMsg}}</mat-error>
+        <br/>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input matInput required type="text" #input maxlength="30" placeholder="Name der Praxis"
+                 [(ngModel)]="officeModel.name"
+                 name="officeName">
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput #input type="text" placeholder="Telefonnummer" pattern="^[0-9]*[\s|/]?[0-9]*$" [(ngModel)]="officeModel.phone"
+                 name="phone">
+          <mat-hint align="end">Format with whitespace or / as delimiter</mat-hint>
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoTelFax}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput #input type="text" placeholder="Fax" pattern="^[0-9]*[\s|/]?[0-9]*$" [(ngModel)]="officeModel.fax"
+                 name="fax">
+          <mat-hint align="end">Format with whitespace or / as delimiter</mat-hint>
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoTelFax}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="email" required #input maxlength="50" placeholder="Email"
+                 pattern="[^@]+@[^\.]+\..+" [(ngModel)]="officeModel.email" name="mail">
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoEmail}}</mat-error>
+        </mat-form-field>
+      </p>
+<br/>
+      <p>
+        <mat-label>Adresse</mat-label>
+      </p>
+      <br/>
+      <p>
+        <mat-form-field>
+          <input matInput required type="text" #input maxlength="50" placeholder="Strasse"
+                 [(ngModel)]="officeModel.address.street"
+                 name="street">
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="number" #input placeholder="Hausnummer" [(ngModel)]="officeModel.address.number"
+                 name="number">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="number" #input placeholder="Stiege" [(ngModel)]="officeModel.address.floor"
+                 name="floor">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="number" #input placeholder="Tür" [(ngModel)]="officeModel.address.door" name="door">
+        </mat-form-field>
+      </p>
+
+      <!--<mat-form-field>
+        <input matInput required #input maxlength="20" placeholder="Place" [(ngModel)]="officeModel.address.place"
+               name="place">
+        <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+      </mat-form-field>-->
+      <p>
+        <mat-form-field>
+          <input matInput type="number" required #input placeholder="PLZ" [(ngModel)]="officeModel.address.zip"
+                 name="zip">
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" required #input maxlength="50" placeholder="Stadt"
+                 [(ngModel)]="officeModel.address.city"
+                 name="city">
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" required #input maxlength="50" placeholder="Land"
+                 [(ngModel)]="officeModel.address.country"
+                 name="country">
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        </mat-form-field>
+      </p>
+      <button mat-stroked-button [disabled]="userForm.form.untouched && userForm.form.invalid"
+              type="submit"
+              color="primary">Änderungen übernehmen
+      </button>
+
+      <br/>
+      <br/>
+
+      <P>
+        <mat-label>Öffnungszeiten</mat-label>
+      </P>
+
+      <hr>
+
+      <p>
+        <app-office-hour *ngFor="let oh of officeModel.officehours"
+                         [officeHour]="oh"
+                         (officeHourChanged)="onOfficeHourChange($event)"
+                         (onOfficeHourClickDelete)="onOfficeHourDelete($event)"
+                         (sortArray)="onSortArray($event)"
+        >
+        </app-office-hour>
+      </p>
+
+      <p *ngIf="isAddError">
+        <label>{{addInfo}}</label>
+        <br/>
+      </p>
+
+      <p>
+        <button mat-flat-button color="primary" type="button" (click)="addOfficeHour()">Hinzufügen</button>
+      </p>
+      <!--<div class="topBottom">
+        <hr>
+        {{"officeHourValidChange: " + officeHourValidChange}}
+        <br/>
+        {{"Form invalid: " + userForm.form.invalid}}
+        <br/>
+        {{"Form untouched: " + userForm.form.untouched}}
+        <br/>
+        {{"Form dirty: " + userForm.form.dirty}}
+        <br/>
+        {{"Form valid: " + userForm.form.valid}}
+        <br/>
+        {{"Form touched: " + userForm.form.touched}}
+        <br/>
+      </div>-->
+      <br/>
+      <p>
+        <button mat-stroked-button [disabled]="!officeHourValidChange"
+                type="submit"
+                color="primary">Änderungen übernehmen
+        </button>
+        <!--<button mat-raised-button routerLink="../medicalworker" color="accent" type="button">Medicalworkers</button>-->
+      </p>
+
+    </form>
+  </div>
+</mat-card>
+
+

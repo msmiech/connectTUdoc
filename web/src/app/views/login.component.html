@@ -1,0 +1,37 @@
+<navbar [menuBtnVisible]="false"></navbar>
+<mat-card class="login-card">
+  <mat-card-title>
+    Login
+  </mat-card-title>
+  <mat-card-content>
+    <form class="login-form">
+      <table class="login-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="login-full-width">
+              <input matInput placeholder="E-Mail-Adresse" [(ngModel)]="email" name="email" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="login-full-width">
+              <input matInput placeholder="Passwort" [(ngModel)]="password" type="password" name="password" required>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <button mat-raised-button (click)="login(email, password)" [style.width]="showSpinner ? '180 px' : '180px'"
+              color="primary">
+        Login
+        <mat-spinner [style.display]="showSpinner ? 'inline-block ' : 'none'" [color]="'warn'"
+                     [diameter]="'40'"></mat-spinner>
+      </button>
+    </form>
+  </mat-card-content>
+  <mat-card-footer *ngIf="showError">
+    <p style="color: red;margin-left: 20px;"> {{ textError }} </p>
+  </mat-card-footer>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>

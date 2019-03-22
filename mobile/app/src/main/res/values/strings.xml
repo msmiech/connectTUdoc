@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">connectTUdoc</string>
+    <string name="login_title">Login now</string>
+    <string name="logout_title">Click to logout</string>
+    <string name="find_doctor_label">Doctor Search</string>
+    <string name="my_doctors_label">My Doctors</string>
+    <string name="telephone_label">Phone</string>
+    <string name="address_label">Address</string>
+    <string name="officehour_label">Opening Hours</string>
+    <string name="button_available_appointments">Available Appointments</string>
+    <string name="login_abort">Aborted</string>
+    <string name="login_error">Error during login</string>
+    <string name="doc_stat">Doctor Statistics</string>
+    <string name="you">You</string>
+    <string name="office">Office</string>
+    <string name="message_placeholder">Write Message</string>
+    <string name="no_appointments_available">No appointments available for chosen day</string>
+    <string name="dialog_sign_up_for_appointment">Do you want to sign up for this appointment?</string>
+    <string name="my_appointments_label">My Appointments</string>
+    <string name="no_appointments">No Appointments</string>
+    <string name="no_doctors">No doctors</string>
+    <string name="login_placeholder">Please login first</string>
+    <string name="appointment_registered">Successfully registered</string>
+    <string name="appointment_not_registered">Appointment registration failed</string>
+    <string name="btn_camera">Open Camera</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_take_photo">Take and Send Photo</string>
+    <string name="image_view_preview">Image Preview</string>
+    <string name="new_private_key">Previous accounts private key is lost!</string>
+    <string name="scan_text">Scan Text</string>
+    <string name="scan_image">Scan image from gallery</string>
+    <string name="take_and_scan_photo">Take and scan photo</string>
+    <string name="send_message_question">Send this message?</string>
+    <string name="new_message">New Message</string>
+    <string name="btn_send">send</string>
+    <string name="text_not_recognized">Text could not be recognized</string>
+    <string name="msg_error_while_cropping">Error occured while cropping. Please try again.</string>
+    <string name="msg_please_try_again">Please try again</string>
+    <string name="crop_image_question">Crop image?</string>
+    <string name="select_part_for_text_recognition">Select a image part for text recognition</string>
+    <string name="yes">yes</string>
+    <string name="scan_image_from_gallery">Scan image from gallery</string>
+    <string name="btn_send_file">Choose and Send File</string>
+    <string name="take_and_scan_barcode">Scan barcode</string>
+    <string name="barcode_not_recognized">Barcode could not be recognized</string>
+    <string name="medicine_not_found">No matching medicine found</string>
+    <string name="status_unknown">unknown</string>
+    <string name="status_connecting">connecting</string>
+    <string name="status_dialing">dialing</string>
+    <string name="status_failed">failed</string>
+    <string name="status_connected">connected</string>
+    <string name="status_finished">finished</string>
+    <string name="btn_accept">Accept</string>
+    <string name="btn_decline">Decline</string>
+    <string name="msg_call">Do you want to accept the call?</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="fcm_registration_token" translatable="false">fcm_registration_token</string>
+    <string name="mydoctor_add_button">Generate confirmation code</string>
+    <string name="mydoctor_code_description">The doctor has to type in the code within the next 5 min</string>
+    <string name="no_registrationcode_available">Code could not be generated</string>
+    <string name="settings">Settings</string>
+    <string name="city">City</string>
+    <string name="btn_save">Save</string>
+    <string name="settings_saved_msg">Settings saved</string>
+    <string name="settings_location_doeas_not_exist_msg">Location from settings does not exist</string>
+    <string name="location_input_info">Location to be used for doctor search</string>
+    <string name="location_label">Location</string>
+    <string name="backend_url_input_info">Only for developers</string>
+    <string name="gps_position">GPS Position</string>
+    <string name="doctor_search_hint">Search for doctors</string>
+</resources>

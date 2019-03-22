@@ -1,0 +1,89 @@
+{
+  "id": 9,
+  "name": "Praxis Dr. Mayer",
+  "phone": "984417",
+  "fax": "17929829",
+  "address": {
+    "id": 9,
+    "street": "Zieglergasse",
+    "number": "7",
+    "door": "1",
+    "floor": "7",
+    "place": "Vienna",
+    "zip": 8029,
+    "city": "Vienna",
+    "country": "Austria"
+  },
+  "email": "office@hugo.at",
+  "officehours": [
+    {
+      "id": 41,
+      "beginTime": "07:00",
+      "endTime": "12:00",
+      "daytype": "MONDAY"
+    },
+    {
+      "id": 42,
+      "beginTime": "13:00",
+      "endTime": "16:00",
+      "daytype": "MONDAY"
+    },
+    {
+      "id": 43,
+      "beginTime": "08:00",
+      "endTime": "11:00",
+      "daytype": "TUESDAY"
+    },
+    {
+      "id": 44,
+      "beginTime": "13:00",
+      "endTime": "18:00",
+      "daytype": "THURSDAY"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 11,
+      "appointmentBegin": "2018-03-12 14:15",
+      "appointmentEnd": "2018-03-12 16:15"
+    }
+  ],
+  "officeWorkers": [
+    {
+      "id": 13,
+      "preTitle": "Vamp",
+      "firstName": "Marcus",
+      "lastName": "Mayer",
+      "posTitle": "ire",
+      "eMail": "graf@dracu.la",
+      "privateKey": "7956",
+      "publicKey": "4442",
+      "specialities": [
+        {
+          "id": 13,
+          "specialityName": "Human"
+        }
+      ],
+      "type": "DOCTOR",
+      "chatThreads": []
+    },
+    {
+      "id": 14,
+      "preTitle": "Ass",
+      "firstName": "Max",
+      "lastName": "Muster",
+      "posTitle": "tent",
+      "eMail": "max.muster@dracu.la",
+      "privateKey": "3750",
+      "publicKey": "0167",
+      "specialities": [
+        {
+          "id": 14,
+          "specialityName": "Technican"
+        }
+      ],
+      "type": "ASSISTANT",
+      "chatThreads": []
+    }
+  ]
+}

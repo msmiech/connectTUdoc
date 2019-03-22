@@ -1,0 +1,32 @@
+<mat-card class="unconfirmed-patients-card" *ngFor="let patient of unconfirmedPatients">
+  <mat-card-header>
+    <!--<div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>-->
+    <mat-card-title class="title"
+                    style="width: 250px">{{patient.preTitle}} {{patient.firstName}} {{patient.lastName}} {{patient.posTitle}}</mat-card-title>
+    <mat-card-subtitle>{{patient.eMail}}</mat-card-subtitle>
+    <button mat-raised-button color="primary" (click)="accept(patient)">
+      <mat-icon>thumb_up</mat-icon>
+      Bestätigen
+    </button>
+    <button mat-raised-button color="warn" (click)="decline(patient)">
+      <mat-icon>thumb_down</mat-icon>
+      Ablehnen
+    </button>
+  </mat-card-header>
+</mat-card>
+<mat-card class="chat-threads-card" *ngFor="let chatThread of chatThreads">
+  <mat-card-header>
+    <!--<div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>-->
+    <mat-card-title class="title" style="width: 250px">
+      <span matBadge="{{chatThread.unreadMessages}}" matBadgeOverlap="false">
+        {{chatThread.patient.preTitle}} {{chatThread.patient.firstName}} {{chatThread.patient.lastName}} {{chatThread.patient.posTitle}}
+      </span>
+    </mat-card-title>
+    <mat-card-subtitle>{{chatThread.patient.eMail}}</mat-card-subtitle>
+    <button mat-raised-button color="primary" (click)="startChat(chatThread.patient)">
+      <mat-icon>comment</mat-icon>
+      Start Chat
+    </button>
+    <button mat-raised-button color="primary" (click)="routeToVideoCall(chatThread.patient)"><mat-icon>videocam</mat-icon>Video Call</button>
+  </mat-card-header>
+</mat-card>

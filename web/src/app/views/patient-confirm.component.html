@@ -1,0 +1,21 @@
+<mat-card class="mat-toolbar">
+  <mat-label>Bestätigungscode eingeben</mat-label>
+</mat-card>
+<mat-card>
+  <mat-dialog-content>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+       <mat-form-field class="mat-input-wrapper_code">
+        <input matInput #input required placeholder="Code eingeben" type="text" [(ngModel)]="registrationcode.code" name="registrationcode"> <!--  -->
+        <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+      </mat-form-field>
+      <p>
+        <button mat-button type="button" (click)="onClose()">
+          Abbrechen
+        </button>
+        <button mat-raised-button [disabled]="userForm.invalid || userForm.untouched">
+          Bestätigen
+        </button>
+      </p>
+    </form>
+  </mat-dialog-content>
+</mat-card>

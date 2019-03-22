@@ -1,0 +1,32 @@
+<mat-card>
+  <!--<div class="topBottom">
+    <br/>
+    {{"Form invalid: " + userForm.form.invalid}}
+    <br/>
+    {{"Form untouched: " + userForm.form.untouched}}
+    <hr>
+  </div>-->
+  <form #userForm="ngForm" (change)="someChange(userForm.valid, userForm.touched)"
+        (click)="someChange(userForm.valid, userForm.touched)" novalidate>
+    <mat-form-field>
+      <mat-select (selectionChange)="someChange(userForm.valid, userForm.touched); this.onSortArray()" #input required
+                  placeholder="Wochentag" [(ngModel)]="officeHour.daytype" [(value)]="officeHour.daytype"
+                  name="dayType">
+        <mat-option *ngFor="let dy of _dayType" value="{{dy}}">{{dy}}</mat-option>
+        <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required #input placeholder="Beginn" type="time" [(ngModel)]="officeHour.beginTime" name="beginTime">
+      <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+    </mat-form-field>
+    <mat-label style="margin-left: 1em; margin-right: 1em;">:</mat-label>
+    <mat-form-field>
+      <input matInput required #input placeholder="Ende" type="time" [(ngModel)]="officeHour.endTime" name="endTime">
+      <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="button" color="warn" style="margin-left: 1em;" (click)="onDeleteOfficeHour()">
+      Löschen
+    </button>
+  </form>
+</mat-card>

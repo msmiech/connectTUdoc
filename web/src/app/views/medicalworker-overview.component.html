@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-title>
+    MedicalWorkers
+  </mat-card-title>
+  <h3>{{errorMsg}}</h3>
+  <!--<div>
+    <label>MedicalWorker Information</label><br/>
+    {{medWorkers | json}}
+    <hr>
+  </div>-->
+  <app-medicalworker *ngFor="let med of officeModel.officeWorkers"
+                   [medicalWorker]="med"
+                   (onMedicalWorkerChanged)="onMedicalWorkerChange($event)"
+                   (onMedicalWorkerClickDelete)="onMedicalWorkerDelete($event)"
+                   (onMedicalWorkerUpdate)="onSubmit($event)"
+  >
+  </app-medicalworker>
+
+  <div *ngIf="isAddErrorMedicalworker">
+    <label>{{addInfoMedicalworker}}</label>
+  </div>
+  <button mat-flat-button color="primary" (click)="addMedicalWorker()">Add</button>
+
+</mat-card>

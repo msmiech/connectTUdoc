@@ -1,0 +1,52 @@
+<mat-card class="mat-toolbar mat-primary">
+  <mat-label>Neuen Termin anlegen</mat-label>
+</mat-card>
+<mat-card>
+  <mat-dialog-content>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <mat-form-field *ngIf="getDisplayOption(); then thenBlock; else elseBlock">
+
+      </mat-form-field>
+
+      <ng-template #elseBlock>
+        <mat-form-field class="mat-input-wrapper_name">
+          <input type="text" required placeholder="Wähle den Namen des Patienten"  [formControl]="myControl" [(ngModel)]="patientDisplayName" matInput [matAutocomplete]="auto" name="selectPatientName" >
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let patient of filteredOptions | async" [(value)]="patient.lastName + ' ' + patient.firstName" (onSelectionChange)="setSelection(patient)">
+              {{(patient.lastName + ' ' + patient.firstName)}}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        </mat-form-field>
+      </ng-template>
+
+      <ng-template #thenBlock>
+        <mat-form-field class="mat-input-wrapper_patienName">
+          <input matInput #input required placeholder="Name des Patienten" disabled type="text" [(ngModel)]="data.name" name="patientName">
+          <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        </mat-form-field>
+      </ng-template>
+
+      <mat-form-field class="mat-input-wrapper_temrin">
+        <input matInput #input required placeholder="Begin des Termins" type="datetime-local" dataformatas="yyyy-MM-dd HH:mm" [(ngModel)]="appointment._appointmentBegin" name="beginTime"> <!--  -->
+        <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        <mat-hint>{{_helpTexts.infoDateFormat}}</mat-hint>
+      </mat-form-field>
+      <mat-label style="margin-left: 1em; margin-right: 1em;">:</mat-label>
+      <mat-form-field  class="mat-input-wrapper_temrin">
+        <input matInput #input required placeholder="Ende des Termins" type="datetime-local" dataformatas="yyyy-MM-dd HH:mm" [(ngModel)]="appointment._appointmentEnd" name="endTime">
+        <mat-error *ngIf="input.checkValidity()">{{_helpTexts.infoInputRequired}}</mat-error>
+        <mat-hint>{{_helpTexts.infoDateFormat}}</mat-hint>
+      </mat-form-field>
+      <p>
+        <button mat-button type="button" (click)="onClose()">
+          Abbrechen
+        </button>
+        <button mat-raised-button [disabled]="userForm.invalid || userForm.untouched">
+          Speichern
+        </button>
+      </p>
+    </form>
+  </mat-dialog-content>
+</mat-card>

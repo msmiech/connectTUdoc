@@ -1,0 +1,38 @@
+.chatInput{
+  flex: 10;
+  font-size: 2em;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 7px;
+  background-color: #cccccc;
+  color: #000;
+  transition: 0.1s ease-out;
+  padding-left: 80px;
+  width: 75%;
+}
+
+.chatInput:focus{
+  background-color: #aaaaaa;
+  color: #222;
+  transition: 0.2s ease-in;
+}
+
+.chatButton{
+  flex: 1;
+  padding: 10px 24px 4px 24px;
+  font-size: 1.3em;
+  font-family: 'Droid Sans', sans-serif;
+  background-color: #673ab7;
+  color: white;
+  transition: 0.2s ease-out;
+  min-width: 50px;
+  width: 20%;
+}
+
+.chatButton:hover{
+  background-color: #444;
+}
+
+.inputField {
+  width: 100%;
+}
+

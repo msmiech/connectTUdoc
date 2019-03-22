@@ -1,0 +1,49 @@
+<div class="chatHeader">
+<span class="headerField">
+  {{ patientName }}
+</span>
+</div>
+
+<mat-grid-list cols="5" rowHeight="4:1">
+
+  <mat-grid-tile colspan="5" rowspan="2">
+    <h1>Video Calling</h1>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="3" rowspan="6">
+    <p>Video des Patienten</p>
+    <video style="border: darkgrey solid 1px" autoplay #patientVideo></video>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2" rowspan="3">
+
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="3">
+    <video class="doctor-video" autoplay muted #doctorVideo width="320" height="180"></video>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="3">
+
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="1">
+    <button mat-flat-button color="primary" (click)="startVideoCall()">Videoanruf starten</button>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile colspan="1" rowspan="1">
+    <button mat-flat-button color="primary" (click)="takeScreenshot()">Screenshot aufnehmen</button>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="1">
+    <button mat-flat-button color="primary" (click)="endVideoCall()">Anruf beenden</button>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+
+<canvas class="canvas-holder" width="1280" height="720" #videoScreenshot></canvas>
+
+
+

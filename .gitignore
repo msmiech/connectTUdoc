@@ -1,0 +1,15 @@
+# IntelliJ
+*.iml
+.idea/
+
+# Keystore files
+*.jks
+*.keystore
+
+# macOS stuff
+.DS_Store
+Snap.20181128.174519.14728.0003.trc
+core.20181128.174519.14728.0001.dmp
+javacore.20181128.174519.14728.0002.txt
+jitdump.20181128.174519.14728.0004.dmp
+out/

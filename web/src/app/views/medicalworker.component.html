@@ -1,0 +1,60 @@
+<mat-card>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" (change)="someChange()" novalidate>
+    <mat-form-field>
+      <input matInput #input type="text" placeholder="Pretitle" maxlength="20" [(ngModel)]="medicalWorker.preTitle"
+             name="preTitle">
+      <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #input required type="text" placeholder="Firstname" maxlength="20"
+             [(ngModel)]="medicalWorker.firstName" name="firstName">
+      <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #input required type="text" placeholder="Lastname" maxlength="20"
+             [(ngModel)]="medicalWorker.lastName" name="lastName">
+      <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #input type="text" placeholder="Posttitle" maxlength="20" [(ngModel)]="medicalWorker.posTitle"
+             name="posTitle">
+      <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #input required type="email" placeholder="Email" maxlength="50" [(ngModel)]="medicalWorker.eMail"
+             name="eMail">
+      <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select required [(ngModel)]="medicalWorker.type" placeholder="Type" [(value)]="medicalWorker.type"
+                  name="type">
+        <mat-option *ngFor="let tp of types" value="{{tp}}">{{tp}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <div class="topBottom">
+      </div>
+      <label>Specialities</label>
+      <div class="topBottom">
+      </div>
+    </div>
+    <app-speciality *ngFor="let sp of medicalWorker.specialities"
+                    [speciality]="sp"
+                    (specialityChanged)="onSpecialityChange($event)"
+                    (onSpecialityClickDelete)="onSpecialityDelete($event)"
+    >
+    </app-speciality>
+    <div *ngIf="isAddErrorSpeciality">
+      <label>{{addInfoSpeciality}}</label>
+    </div>
+    <div class="topBottom">
+    </div>
+    <button mat-raised-button type="button" (click)="addSpeciality()">Add speciality</button>
+    <div class="topBottom">
+    </div>
+    <button mat-stroked-button [disabled]="userForm.form.invalid || !onMedChange" type="submit"
+            color="primary">Apply changes
+    </button>
+    <button mat-raised-button type="button" (click)="onDeleteMedicalworker()">Delete</button>
+  </form>
+</mat-card>

@@ -1,0 +1,23 @@
+.tile-header{
+  background: none !important;
+  color: black !important;
+}
+.doctor-video{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.canvas-holder{
+  visibility: hidden;
+}
+
+.chatHeader {
+  width: 100%;
+  background-color: #673ab7;
+  color: #ffffff;
+  padding-left: 45%;
+}
+
+.headerField{
+  font-size: 1.5em;
+}

@@ -1,0 +1,42 @@
+.toggleGroupLayout{
+  display: flex;
+  align-content: center;
+}
+
+.toggleButtonDateLayout{
+  width: 33.3%;
+}
+
+.toggleButtonDateLayoutMiddle{
+  width: 33.4%;
+}
+
+.toggleButtonPreviousLayout{
+  width: 5%;
+}
+
+.toggleButtonTodayLayout{
+  width: 90%;
+}
+
+.toggleButtonNextLayout{
+  width: 5%;
+}
+
+.todayText{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.title{
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.registerButton {
+  width: 33%;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

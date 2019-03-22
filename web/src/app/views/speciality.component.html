@@ -1,0 +1,9 @@
+<mat-card>
+  <form (change)="someChange()" novalidate>
+    <mat-form-field>
+      <input matInput #input required type="email" placeholder="Name" maxlength="30" [(ngModel)]="speciality.specialityName"  name="specialityName">
+      <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+    </mat-form-field>
+    <button mat-raised-button type="button" color="warn" style="margin-left: 1em;" (click)="onSpecialityDelete()">Delete</button>
+  </form>
+</mat-card>

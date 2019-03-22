@@ -1,0 +1,16 @@
+<mat-sidenav-container class="nav-container">
+  <mat-sidenav mode="side" [opened]="sidebarOpened" [fixedInViewport]="true" [fixedTopGap]="64">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/main/appointment-overview">Termine</a>
+      <a mat-list-item routerLink="/main/office">Praxis-Management</a>
+      <a mat-list-item routerLink="/main/chats" ><span style="padding-top: 16px;"><span matBadge="{{ getUnreadMessages() }}" matBatchOverlap="false" >Patienten  </span></span></a>
+      <a mat-list-item routerLink="/login">Logout</a>
+      <!--<a mat-list-item routerLink="/main/medicalworker-overview">Medical worker list</a>-->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main class="main main-page">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Screenshot wurde aufgenommen.</h1>
+<div mat-dialog-content>
+  <p>Screenshot im Downloads Ordner speichern?</p>
+  <img alt="Screenshot im Downloads Ordner speichern" [src]="data.imgSrc" width="480" height="360"/>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="confirm()">Ja</button>
+  <button mat-button (click)="onNoClick()">Nein</button>
+</div>

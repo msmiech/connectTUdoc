@@ -1,5 +1,5 @@
 # connectTUdoc
-connectTUdoc is a university project which aims to simplify communication between doctors and patients.
+connectTUdoc is a prototype which aims to simplify communication between doctors and patients.
 It enables appointment management, encrypted text & video chat, file transfer and medication recognition using ML Kit.
 
 <p>
@@ -7,6 +7,9 @@ It enables appointment management, encrypted text & video chat, file transfer an
   <img height="400" src="resources/screenshots/map-screen.PNG"> 
   <img height="400" src="resources/screenshots/mobile-chat-screen.PNG"> 
 </p>
+
+## Background and Requirements
+This project was developed as a university project. The aim was to provide a secure means of communication (i.e. using proper authentication and encryption) between patients and doctors. One requirement in particular was not to store keys on the backend server but use and external authority for key management. Every request needs to be authenticated using that external authority. Another requirement was to support the German language.
 
 ## Implementation 
 ### Technology
